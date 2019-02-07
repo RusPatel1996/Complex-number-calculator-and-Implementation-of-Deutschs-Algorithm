@@ -23,7 +23,7 @@ complex<double> ComplexCalculations::division(complex<double> complexNum1, compl
 }
 
 complex<double> ComplexCalculations::modulus(complex<double> complexNum){
-    return NULL;
+    return abs(complexNum);
 }
 
 complex<double> ComplexCalculations::conjugate(complex<double> complexNum){
