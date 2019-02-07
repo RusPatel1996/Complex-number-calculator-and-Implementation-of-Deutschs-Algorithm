@@ -16,11 +16,11 @@ class ComplexCalculations
 {
 public:
     complex<double> addition(complex<double>, complex<double>);
-    complex<double> subtraction();
-    complex<double> multiplication();
-    complex<double> division();
-    complex<double> modulus();
-    complex<double> conjugate();
+    complex<double> subtraction(complex<double>, complex<double>);
+    complex<double> multiplication(complex<double>, complex<double>);
+    complex<double> division(complex<double>, complex<double>);
+    complex<double> modulus(complex<double>);
+    complex<double> conjugate(complex<double>);
 protected:
 private:
 };
