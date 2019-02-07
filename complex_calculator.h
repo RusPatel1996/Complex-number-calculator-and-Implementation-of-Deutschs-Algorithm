@@ -13,7 +13,11 @@
 class ComplexCalculations
 {
 public:
+    std::complex<double> something();
+protected:
+    
 private:
+    
 };
 
 #endif /* complex_calculator_h */
