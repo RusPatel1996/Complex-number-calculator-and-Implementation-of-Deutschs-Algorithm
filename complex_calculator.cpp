@@ -5,3 +5,7 @@
 //
 
 #include "complex_calculator.h"
+
+complex<double> ComplexCalculations::addition(complex<double> a, complex<double> b){
+    return a + b;
+}

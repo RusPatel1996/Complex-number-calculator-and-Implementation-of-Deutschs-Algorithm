@@ -1,5 +1,5 @@
 //
-//  quantum_gates.hpp
+//  quantum_gates.h
 //  Quantum Computing Project
 //
 //
