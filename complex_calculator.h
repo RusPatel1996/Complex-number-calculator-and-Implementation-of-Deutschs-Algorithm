@@ -9,7 +9,6 @@
 
 #include <stdio.h>
 #include <complex>
-#include <vector>
 using namespace std;
 
 class ComplexCalculations

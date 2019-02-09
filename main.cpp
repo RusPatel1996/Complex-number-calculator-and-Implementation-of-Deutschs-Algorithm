@@ -5,9 +5,8 @@
 //
 
 #include <iostream>
-#include <complex>
-#include <vector> //
 #include "complex_calculator.h"
+#include "complex_vector_calculator.h"
 using namespace std;
 
 int main(){
