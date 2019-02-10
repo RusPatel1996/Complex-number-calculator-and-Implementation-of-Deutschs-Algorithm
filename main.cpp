@@ -10,17 +10,23 @@
 using namespace std;
 
 int main(){
-    complex<double> complex1(3,2), complex2(1,7);
-    //complex<double> complexResult = complex1*complex2;
-    //cout << complexResult.real() << " + " << complexResult.imag() << "i" << endl;
-    //cout << conj(complexResult) << endl;
     
-    vector<complex<double>> complexNumVector;
-    complexNumVector.push_back(complex1);
-    cout << complexNumVector.at(0) << endl;
+    vector<vector<complex<double>>> vec1;
+    vector<vector<complex<double>>> vec2;
+    //vector<complex<double>> x = {{1,2},{2,3}};
+    //vec.push_back(x);
     
-    ComplexCalculations test;
-    cout << test.addition(complex1, complex2) << endl;
+    vec1.push_back({{1,2},{2,3}});
+    vec1.push_back({{3,4},{4.5}});
+    vec2.push_back({{1,2},{2,3}});
+    vec2.push_back({{3,4},{4.5}});
+    //cout << vec[1][0] << endl;
+    
+    ComplexVectorCalculations calculate;
+    cout << calculate.verifySize(vec1, vec2) << endl;
+    cout << calculate.addition(vec1, vec2)[0][1]
+    
+    
     
     return 0;
 }

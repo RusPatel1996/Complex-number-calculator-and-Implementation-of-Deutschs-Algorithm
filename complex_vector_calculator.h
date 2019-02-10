@@ -21,7 +21,7 @@ public:
     vector<vector<complex<double>>> conjugate(vector<vector<complex<double>>>, vector<vector<complex<double>>>);
     vector<vector<complex<double>>> transpose(vector<vector<complex<double>>>, vector<vector<complex<double>>>);
     vector<vector<complex<double>>> adjoint(vector<vector<complex<double>>>, vector<vector<complex<double>>>);
-    bool verifySize(vector<vector<complex<double>>> complexVector1, vector<vector<complex<double>>> complexVector2);
+    bool verifySize(vector<vector<complex<double>>>, vector<vector<complex<double>>>);
 protected:
 private:
 };
