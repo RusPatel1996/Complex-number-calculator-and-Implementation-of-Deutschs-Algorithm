@@ -6,6 +6,7 @@
 
 #include "complex_vector_calculator.h"
 
+
 vector<vector<complex<double>>> ComplexVectorCalculations::addition(vector<vector<complex<double>>> complexVector1, vector<vector<complex<double>>> complexVector2){
     
     vector<complex<double>> vectorForRow;
@@ -107,4 +108,14 @@ bool ComplexVectorCalculations::equalSize(vector<vector<complex<double>>> comple
     else {
         return false;
     }
+}
+
+void ComplexVectorCalculations::viewComplexVector(vector<vector<complex<double>>> complexVector){
+    for (int row = 0; row < complexVector.size(); row++){
+        for (int column = 0; column < complexVector[row].size(); column++){
+            cout << setw(10) << complexVector[row][column];
+        }
+        cout << endl;
+    }
+    cout << endl;
 }

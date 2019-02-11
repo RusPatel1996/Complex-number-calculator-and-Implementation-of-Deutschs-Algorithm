@@ -9,6 +9,8 @@
 
 #include <stdio.h>
 #include <vector>
+#include <iostream>
+#include <iomanip>
 #include "complex_calculator.h"
 
 class ComplexVectorCalculations
@@ -21,6 +23,7 @@ public:
     vector<vector<complex<double>>> transpose(vector<vector<complex<double>>>);
     vector<vector<complex<double>>> adjoint(vector<vector<complex<double>>>);
     bool equalSize(vector<vector<complex<double>>>, vector<vector<complex<double>>>);
+    void viewComplexVector(vector<vector<complex<double>>>);
 protected:
 private:
 };

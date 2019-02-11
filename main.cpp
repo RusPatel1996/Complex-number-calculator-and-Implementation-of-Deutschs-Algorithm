@@ -22,7 +22,9 @@ int main(){
     vec2.push_back({{7,-4},{2,7},{0,0}});
     
     ComplexVectorCalculations calculate;
-    cout<< calculate.multiplication(vec1, vec2)[1][1] << endl;
+    calculate.viewComplexVector(vec1);
+    calculate.viewComplexVector(calculate.transpose(vec1));
+    calculate.viewComplexVector(calculate.multiplication(vec1, vec2));
     
     return 0;
 }
