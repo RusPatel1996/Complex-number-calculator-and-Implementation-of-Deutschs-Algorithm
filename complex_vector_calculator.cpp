@@ -6,9 +6,7 @@
 
 #include "complex_vector_calculator.h"
 
-
 vector<vector<complex<double>>> ComplexVectorCalculations::addition(vector<vector<complex<double>>> complexVector1, vector<vector<complex<double>>> complexVector2){
-    
     vector<complex<double>> vectorForRow;
     vector<vector<complex<double>>> vectorAddition;
     
@@ -46,11 +44,10 @@ vector<vector<complex<double>>> ComplexVectorCalculations::multiplication(vector
     vector<vector<complex<double>>> vectorMultiplication;
     
     if (complexVector1.size() == complexVector2[0].size()){
-        for (int x = 0; x < complexVector1.size(); x++){
-            
-            for (int y = 0; y < complexVector2[0].size(); y++){
-                for (int z = 0; z < complexVector1[x].size(); z++){
-                    sumComplexNum += complexVector1[x][z] * complexVector2[z][y];
+        for (int row_vector1 = 0; row_vector1 < complexVector1.size(); row_vector1++){
+            for (int col_vector2 = 0; col_vector2 < complexVector2[0].size(); col_vector2++){
+                for (int col_vector1 = 0; col_vector1 < complexVector1[row_vector1].size(); col_vector1++){
+                    sumComplexNum += complexVector1[row_vector1][col_vector1] * complexVector2[col_vector1][col_vector2];
                 }
                 vectorForRow.push_back(sumComplexNum);
                 sumComplexNum = 0;
@@ -60,6 +57,38 @@ vector<vector<complex<double>>> ComplexVectorCalculations::multiplication(vector
         }
     }
     return vectorMultiplication;
+}
+
+vector<vector<complex<double>>> ComplexVectorCalculations::scalarMultiplication(complex<double> scalarValue, vector<vector<complex<double>>> complexVector){
+    vector<complex<double>> vectorForRow;
+    vector<vector<complex<double>>> vectorMultiplication;
+    
+    for (int row = 0; row < complexVector.size(); row++){
+        for (int column = 0; column < complexVector[row].size(); column++){
+            vectorForRow.push_back(scalarValue * complexVector[row][column]);
+        }
+        vectorMultiplication.push_back(vectorForRow);
+        vectorForRow.clear();
+    }
+    return vectorMultiplication;
+}
+
+vector<vector<complex<double>>> ComplexVectorCalculations::tensor(vector<vector<complex<double>>> complexVector1, vector<vector<complex<double>>> complexVector2){
+    vector<complex<double>> vectorForRow;
+    vector<vector<complex<double>>> vectorTensor;
+    
+    for (int row_vector1 = 0; row_vector1 < complexVector1.size(); row_vector1++){
+        for (int row_vector2 = 0; row_vector2 < complexVector2.size(); row_vector2++){
+            for (int col_vector1 = 0; col_vector1 < complexVector1[0].size(); col_vector1++){
+                for (int col_vector2 = 0; col_vector2 < complexVector2[0].size(); col_vector2++){
+                    vectorForRow.push_back(complexVector1[row_vector1][col_vector1] * complexVector2[row_vector2][col_vector2]);
+                }
+            }
+            vectorTensor.push_back(vectorForRow);
+            vectorForRow.clear();
+        }
+    }
+    return vectorTensor;
 }
 
 vector<vector<complex<double>>> ComplexVectorCalculations::conjugate(vector<vector<complex<double>>> complexVector){
