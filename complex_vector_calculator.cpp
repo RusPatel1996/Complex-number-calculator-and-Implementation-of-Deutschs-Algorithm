@@ -142,7 +142,7 @@ bool ComplexVectorCalculations::equalSize(vector<vector<complex<double>>> comple
 void ComplexVectorCalculations::viewComplexVector(vector<vector<complex<double>>> complexVector){
     for (int row = 0; row < complexVector.size(); row++){
         for (int column = 0; column < complexVector[row].size(); column++){
-            cout << setw(10) << complexVector[row][column];
+            cout << setw(5) << complexVector[row][column];
         }
         cout << endl;
     }

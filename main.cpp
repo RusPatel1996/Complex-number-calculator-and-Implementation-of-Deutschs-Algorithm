@@ -7,6 +7,7 @@
 #include <iostream>
 #include "complex_calculator.h"
 #include "complex_vector_calculator.h"
+#include "quantum_gates.h"
 using namespace std;
 
 int main(){
@@ -30,7 +31,15 @@ int main(){
     vec4.push_back({{1,0},{1,0},{1,0}});
     
     ComplexVectorCalculations calculate;
-    calculate.viewComplexVector(calculate.tensor(vec3, vec4));
+    QuantumGates gate;
+    gate.initializeQubit(1, gate.qubit_1);
+    gate.initializeQubit(1, gate.qubit_2);
+    gate.initializeQubit(0, gate.qubit_3);
+    
+    calculate.viewComplexVector(gate.toffoliGate(gate.qubit_1, gate.qubit_2, gate.qubit_3));
+    
+    //ComplexVectorCalculations calculate;
+    //calculate.viewComplexVector(calculate.tensor(vec3, vec4));
     
     
     /*
