@@ -23,9 +23,18 @@ public:
         {{0,0},{0,0},{0,0},{1,0}},
         {{0,0},{0,0},{1,0},{0,0}}
     };
-    vector<vector<complex<double>>> toffoliGate(vector<vector<complex<double>>>, vector<vector<complex<double>>>, vector<vector<complex<double>>>);
-    void initializeQubit(int, vector<vector<complex<double>>>);
-    vector<vector<complex<double>>> qubit_1, qubit_2, qubit_3;
+    vector<vector<complex<double>>> toffoliGate = {
+        {{1,0},{0,0},{0,0},{0,0},{0,0},{0,0},{0,0},{0,0}},
+        {{0,0},{1,0},{0,0},{0,0},{0,0},{0,0},{0,0},{0,0}},
+        {{0,0},{0,0},{1,0},{0,0},{0,0},{0,0},{0,0},{0,0}},
+        {{0,0},{0,0},{0,0},{1,0},{0,0},{0,0},{0,0},{0,0}},
+        {{0,0},{0,0},{0,0},{0,0},{1,0},{0,0},{0,0},{0,0}},
+        {{0,0},{0,0},{0,0},{0,0},{0,0},{1,0},{0,0},{0,0}},
+        {{0,0},{0,0},{0,0},{0,0},{0,0},{0,0},{0,0},{1,0}},
+        {{0,0},{0,0},{0,0},{0,0},{0,0},{0,0},{1,0},{0,0}}
+    };
+    
+    
 protected:
 private:
 };
