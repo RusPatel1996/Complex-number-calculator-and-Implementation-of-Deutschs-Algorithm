@@ -13,11 +13,19 @@
 class QuantumGates
 {
 public:
+    ComplexVectorCalculations calc;
+    vector<vector<complex<double>>> cnotGate(int, int);
     vector<vector<complex<double>>> toffoliGate(int, int, int);
-    vector<vector<complex<double>>> initializeQubit(vector<vector<complex<double>>>, int);    
+    vector<vector<complex<double>>> fredkinGate(int, int, int);
+    vector<vector<complex<double>>> deutschsAlgorithm(int, int, int);
+    vector<vector<complex<double>>> initializeQubit(vector<vector<complex<double>>>, int);
 protected:
 private:
     vector<vector<complex<double>>> qubit1, qubit2, qubit3;
+    vector<vector<complex<double>>> HadamardMatrix = {
+        {{(1/sqrt(2)),0},{(1/sqrt(2)),0}},
+        {{(1/sqrt(2)),0},{(-1/sqrt(2)),0}}
+    };
     vector<vector<complex<double>>> identityMatrix = {
         {{1,0},{0,0}},
         {{0,0},{1,0}}
