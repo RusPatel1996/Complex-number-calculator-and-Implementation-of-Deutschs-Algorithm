@@ -43,7 +43,7 @@ vector<vector<complex<double>>> ComplexVectorCalculations::multiplication(vector
     vector<complex<double>> vectorForRow;
     vector<vector<complex<double>>> vectorMultiplication;
     
-    if (complexVector1.size() == complexVector2[0].size()){
+    if (complexVector1[0].size() == complexVector2.size()){
         for (int row_vector1 = 0; row_vector1 < complexVector1.size(); row_vector1++){
             for (int col_vector2 = 0; col_vector2 < complexVector2[0].size(); col_vector2++){
                 for (int col_vector1 = 0; col_vector1 < complexVector1[row_vector1].size(); col_vector1++){
@@ -142,7 +142,7 @@ bool ComplexVectorCalculations::equalSize(vector<vector<complex<double>>> comple
 void ComplexVectorCalculations::viewComplexVector(vector<vector<complex<double>>> complexVector){
     for (int row = 0; row < complexVector.size(); row++){
         for (int column = 0; column < complexVector[row].size(); column++){
-            cout << setw(5) << complexVector[row][column];
+            cout << setw(6) << complexVector[row][column];
         }
         cout << endl;
     }

@@ -32,11 +32,8 @@ int main(){
     
     ComplexVectorCalculations calculate;
     QuantumGates gate;
-    gate.initializeQubit(1, gate.qubit_1);
-    gate.initializeQubit(1, gate.qubit_2);
-    gate.initializeQubit(0, gate.qubit_3);
     
-    calculate.viewComplexVector(gate.toffoliGate(gate.qubit_1, gate.qubit_2, gate.qubit_3));
+    calculate.viewComplexVector(gate.toffoliGate(1,1,0));
     
     //ComplexVectorCalculations calculate;
     //calculate.viewComplexVector(calculate.tensor(vec3, vec4));

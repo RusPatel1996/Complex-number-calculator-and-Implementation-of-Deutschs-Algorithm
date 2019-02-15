@@ -13,17 +13,22 @@
 class QuantumGates
 {
 public:
+    vector<vector<complex<double>>> toffoliGate(int, int, int);
+    vector<vector<complex<double>>> initializeQubit(vector<vector<complex<double>>>, int);    
+protected:
+private:
+    vector<vector<complex<double>>> qubit1, qubit2, qubit3;
     vector<vector<complex<double>>> identityMatrix = {
         {{1,0},{0,0}},
         {{0,0},{1,0}}
     };
-    vector<vector<complex<double>>> cnotGate = {
+    vector<vector<complex<double>>> cnotMatrix = {
         {{1,0},{0,0},{0,0},{0,0}},
         {{0,0},{1,0},{0,0},{0,0}},
         {{0,0},{0,0},{0,0},{1,0}},
         {{0,0},{0,0},{1,0},{0,0}}
     };
-    vector<vector<complex<double>>> toffoliGate = {
+    vector<vector<complex<double>>> toffoliMatrix = {
         {{1,0},{0,0},{0,0},{0,0},{0,0},{0,0},{0,0},{0,0}},
         {{0,0},{1,0},{0,0},{0,0},{0,0},{0,0},{0,0},{0,0}},
         {{0,0},{0,0},{1,0},{0,0},{0,0},{0,0},{0,0},{0,0}},
@@ -33,10 +38,6 @@ public:
         {{0,0},{0,0},{0,0},{0,0},{0,0},{0,0},{0,0},{1,0}},
         {{0,0},{0,0},{0,0},{0,0},{0,0},{0,0},{1,0},{0,0}}
     };
-    
-    
-protected:
-private:
 };
 
 #endif /* quantum_gates_h */
