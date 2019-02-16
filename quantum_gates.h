@@ -17,7 +17,7 @@ public:
     vector<vector<complex<double>>> cnotGate(int, int);
     vector<vector<complex<double>>> toffoliGate(int, int, int);
     vector<vector<complex<double>>> fredkinGate(int, int, int);
-    vector<vector<complex<double>>> deutschsAlgorithm(int, int, int);
+    vector<vector<complex<double>>> deutschsAlgorithm(int, int);
     vector<vector<complex<double>>> initializeQubit(vector<vector<complex<double>>>, int);
 protected:
 private:
