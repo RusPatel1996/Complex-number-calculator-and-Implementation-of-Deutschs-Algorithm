@@ -42,6 +42,7 @@ int main(){
 }
 
 void complexNumberCalculations(){
+    ComplexCalculations cmplxCalc;
     int choice = 0;
     double real = 0;
     double imag = 0;
@@ -55,8 +56,47 @@ void complexNumberCalculations(){
     cout << "  6. Conjugate" << endl;
     cin >> choice;
     
-    //complex<double> complex1 = createComplexNumber(real, imag);
-    //complex<double> complex2 = createComplexNumber(real, imag);
+    cout << "Input real value for the first complex number: ";
+    cin >> real;
+    cout << "Input imaginary value for the first complex number: ";
+    cin >> imag;
+    
+    complex<double> complex1 = createComplexNumber(real, imag);
+    complex<double> complex2;
+    
+    if (choice <= 4){
+        cout << "Input real value for the second complex number: ";
+        cin >> real;
+        cout << "Input imaginary value for the second complex number: ";
+        cin >> imag;
+        complex2 = createComplexNumber(real, imag);
+    }
+    
+    switch (choice) {
+        case 1:
+            cout << cmplxCalc.addition(complex1, complex2) << endl;
+            break;
+        case 2:
+            cout << cmplxCalc.subtraction(complex1, complex2) << endl;
+            break;
+        case 3:
+            cout << cmplxCalc.multiplication(complex1, complex2) << endl;
+            break;
+        case 4:
+            cout << cmplxCalc.division(complex1, complex2) << endl;
+            break;
+        case 5:
+            cout << cmplxCalc.modulus(complex1) << endl;
+            break;
+        case 6:
+            cout << cmplxCalc.conjugate(complex1) << endl;
+            break;
+        case 7:
+            
+            break;
+        default:
+            break;
+    }
     
     return;
 }
@@ -76,7 +116,7 @@ void complexVectorCalculations(){
     cout << "  7. Adjoint" << endl;
     cin >> choice;
     
-    //vector<vector<complex<double>>> complexVector1 = createComplexVector(rows, cols);
+    //1vector<vector<complex<double>>> complexVector1 = createComplexVector(rows, cols);
     //vector<vector<complex<double>>> complexVector2 = createComplexVector(rows, cols);
     
     return;
@@ -124,3 +164,12 @@ void quantumGates(){
     
     return;
 }
+
+complex<double> createComplexNumber(double real, double imag){
+    complex<double> complexNum(real, imag);
+    return complexNum;
+}
+
+//vector<vector<complex<double>>> createComplexVector(int rows, int cols){
+//    return ;
+//}
