@@ -91,9 +91,6 @@ void complexNumberCalculations(){
         case 6:
             cout << cmplxCalc.conjugate(complex1) << endl;
             break;
-        case 7:
-            
-            break;
         default:
             break;
     }
@@ -102,9 +99,11 @@ void complexNumberCalculations(){
 }
 
 void complexVectorCalculations(){
+    ComplexVectorCalculations vecCalc;
     int choice = 0;
     int rows = 0;
     int cols = 0;
+    complex<double> complexScalar;
     
     cout << "You have chosen Complex Vector Calculations, what would you like to do next?" << endl;
     cout << "  1. Addition" << endl;
@@ -116,8 +115,54 @@ void complexVectorCalculations(){
     cout << "  7. Adjoint" << endl;
     cin >> choice;
     
-    //1vector<vector<complex<double>>> complexVector1 = createComplexVector(rows, cols);
-    //vector<vector<complex<double>>> complexVector2 = createComplexVector(rows, cols);
+    cout << "Please enter the rows and columns for the vector: ";
+    cin >> rows;
+    cin >> cols;
+    vector<vector<complex<double>>> complexVector1 = createComplexVector(rows, cols);
+    vector<vector<complex<double>>> complexVector2;
+    
+    vecCalc.viewComplexVector(complexVector1);
+    if (choice < 4){
+        cout << "Please enter the rows and columns for the vector: ";
+        cin >> rows;
+        cin >> cols;
+        complexVector2 = createComplexVector(rows, cols);
+        vecCalc.viewComplexVector(complexVector2);
+    }
+    else if (choice == 4){
+        double real = 0;
+        double imag = 0;
+        cout << "Please enter the real and imaginary value for the complex scalar: ";
+        cin >> real;
+        cin >> imag;
+        complexScalar = {real, imag};
+    }
+    
+    switch (choice) {
+        case 1:
+            vecCalc.viewComplexVector(vecCalc.addition(complexVector1, complexVector2));
+            break;
+        case 2:
+            vecCalc.viewComplexVector(vecCalc.subtraction(complexVector1, complexVector2));
+            break;
+        case 3:
+            vecCalc.viewComplexVector(vecCalc.multiplication(complexVector1, complexVector2));
+            break;
+        case 4:
+            vecCalc.viewComplexVector(vecCalc.scalarMultiplication(complexScalar, complexVector1));
+            break;
+        case 5:
+            vecCalc.viewComplexVector(vecCalc.conjugate(complexVector1));
+            break;
+        case 6:
+            vecCalc.viewComplexVector(vecCalc.transpose(complexVector1));
+            break;
+        case 7:
+            vecCalc.viewComplexVector(vecCalc.adjoint(complexVector1));
+            break;
+        default:
+            break;
+    }
     
     return;
 }
@@ -165,11 +210,27 @@ void quantumGates(){
     return;
 }
 
+vector<vector<complex<double>>> createComplexVector(int rows, int cols){
+    vector<complex<double>> rowInput;
+    vector<vector<complex<double>>> cmplxVec;
+    double real = 0;
+    double imag = 0;
+    
+    for (int i = 0; i < rows; i++){
+        for (int j = 0; j < cols; j++){
+            cout << "Input real and imaginary value for the [" +  to_string(i) + "][" + to_string(j) + "] complex number: ";
+            cin >> real;
+            cin >> imag;
+            rowInput.push_back(createComplexNumber(real, imag));
+        }
+        cmplxVec.push_back(rowInput);
+        rowInput.clear();
+    }
+    
+    return cmplxVec;
+}
+
 complex<double> createComplexNumber(double real, double imag){
     complex<double> complexNum(real, imag);
     return complexNum;
 }
-
-//vector<vector<complex<double>>> createComplexVector(int rows, int cols){
-//    return ;
-//}
