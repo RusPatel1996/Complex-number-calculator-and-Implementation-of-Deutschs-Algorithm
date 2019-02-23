@@ -18,7 +18,10 @@ vector<vector<complex<double>>> ComplexVectorCalculations::addition(vector<vecto
             vectorAddition.push_back(vectorForRow);
             vectorForRow.clear();
         }
-    };
+    }
+    else {
+        cout << "Not Possible" << endl;
+    }
     return vectorAddition;
 }
 
@@ -34,6 +37,9 @@ vector<vector<complex<double>>> ComplexVectorCalculations::subtraction(vector<ve
             vectorSubtraction.push_back(vectorForRow);
             vectorForRow.clear();
         }
+    }
+    else {
+        cout << "Not Possible" << endl;
     }
     return vectorSubtraction;
 }
@@ -55,6 +61,9 @@ vector<vector<complex<double>>> ComplexVectorCalculations::multiplication(vector
             vectorMultiplication.push_back(vectorForRow);
             vectorForRow.clear();
         }
+    }
+    else {
+        cout << "Not Possible" << endl;
     }
     return vectorMultiplication;
 }
