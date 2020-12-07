@@ -6,9 +6,11 @@
 
 #include "complex_vector_calculator.h"
 
-vector<vector<complex<double>>> ComplexVectorCalculations::addition(vector<vector<complex<double>>> complexVector1, vector<vector<complex<double>>> complexVector2){
-    vector<complex<double>> vectorForRow;
-    vector<vector<complex<double>>> vectorAddition;
+typedef vector<complex<double>> vcd;
+
+vvcd ComplexVectorCalculations::addition(vvcd complexVector1, vvcd complexVector2){
+    vcd vectorForRow;
+    vvcd vectorAddition;
     
     if (equalSize(complexVector1, complexVector2)){
         for (int row = 0; row < complexVector1.size(); row++){
@@ -25,9 +27,9 @@ vector<vector<complex<double>>> ComplexVectorCalculations::addition(vector<vecto
     return vectorAddition;
 }
 
-vector<vector<complex<double>>> ComplexVectorCalculations::subtraction(vector<vector<complex<double>>> complexVector1, vector<vector<complex<double>>> complexVector2){
-    vector<complex<double>> vectorForRow;
-    vector<vector<complex<double>>> vectorSubtraction;
+vvcd ComplexVectorCalculations::subtraction(vvcd complexVector1, vvcd complexVector2){
+    vcd vectorForRow;
+    vvcd vectorSubtraction;
     
     if (equalSize(complexVector1, complexVector2)){
         for (int row = 0; row < complexVector1.size(); row++){
@@ -44,10 +46,10 @@ vector<vector<complex<double>>> ComplexVectorCalculations::subtraction(vector<ve
     return vectorSubtraction;
 }
 
-vector<vector<complex<double>>> ComplexVectorCalculations::multiplication(vector<vector<complex<double>>> complexVector1, vector<vector<complex<double>>> complexVector2){
+vvcd ComplexVectorCalculations::multiplication(vvcd complexVector1, vvcd complexVector2){
     complex<double> sumComplexNum(0,0);
-    vector<complex<double>> vectorForRow;
-    vector<vector<complex<double>>> vectorMultiplication;
+    vcd vectorForRow;
+    vvcd vectorMultiplication;
     
     if (complexVector1[0].size() == complexVector2.size()){
         for (int row_vector1 = 0; row_vector1 < complexVector1.size(); row_vector1++){
@@ -68,9 +70,9 @@ vector<vector<complex<double>>> ComplexVectorCalculations::multiplication(vector
     return vectorMultiplication;
 }
 
-vector<vector<complex<double>>> ComplexVectorCalculations::scalarMultiplication(complex<double> scalarValue, vector<vector<complex<double>>> complexVector){
-    vector<complex<double>> vectorForRow;
-    vector<vector<complex<double>>> vectorMultiplication;
+vvcd ComplexVectorCalculations::scalarMultiplication(complex<double> scalarValue, vvcd complexVector){
+    vcd vectorForRow;
+    vvcd vectorMultiplication;
     
     for (int row = 0; row < complexVector.size(); row++){
         for (int column = 0; column < complexVector[row].size(); column++){
@@ -82,9 +84,9 @@ vector<vector<complex<double>>> ComplexVectorCalculations::scalarMultiplication(
     return vectorMultiplication;
 }
 
-vector<vector<complex<double>>> ComplexVectorCalculations::tensor(vector<vector<complex<double>>> complexVector1, vector<vector<complex<double>>> complexVector2){
-    vector<complex<double>> vectorForRow;
-    vector<vector<complex<double>>> vectorTensor;
+vvcd ComplexVectorCalculations::tensor(vvcd complexVector1, vvcd complexVector2){
+    vcd vectorForRow;
+    vvcd vectorTensor;
     
     for (int row_vector1 = 0; row_vector1 < complexVector1.size(); row_vector1++){
         for (int row_vector2 = 0; row_vector2 < complexVector2.size(); row_vector2++){
@@ -100,9 +102,9 @@ vector<vector<complex<double>>> ComplexVectorCalculations::tensor(vector<vector<
     return vectorTensor;
 }
 
-vector<vector<complex<double>>> ComplexVectorCalculations::conjugate(vector<vector<complex<double>>> complexVector){
-    vector<complex<double>> vectorForRow;
-    vector<vector<complex<double>>> complexVectorConjugate;
+vvcd ComplexVectorCalculations::conjugate(vvcd complexVector){
+    vcd vectorForRow;
+    vvcd complexVectorConjugate;
     
     for (int row = 0; row < complexVector.size(); row++){
         for (int column = 0; column < complexVector[row].size(); column++){
@@ -114,9 +116,9 @@ vector<vector<complex<double>>> ComplexVectorCalculations::conjugate(vector<vect
     return complexVectorConjugate;
 }
 
-vector<vector<complex<double>>> ComplexVectorCalculations::transpose(vector<vector<complex<double>>> complexVector){
-    vector<complex<double>> vectorForRow;
-    vector<vector<complex<double>>> complexVectorTranspose;
+vvcd ComplexVectorCalculations::transpose(vvcd complexVector){
+    vcd vectorForRow;
+    vvcd complexVectorTranspose;
     
     for (int column = 0; column < complexVector[0].size(); column++){
         for (int row = 0; row < complexVector.size(); row++){
@@ -128,11 +130,11 @@ vector<vector<complex<double>>> ComplexVectorCalculations::transpose(vector<vect
     return complexVectorTranspose;
 }
 
-vector<vector<complex<double>>> ComplexVectorCalculations::adjoint(vector<vector<complex<double>>> complexVector){
+vvcd ComplexVectorCalculations::adjoint(vvcd complexVector){
     return conjugate(transpose(complexVector));
 }
 
-bool ComplexVectorCalculations::equalSize(vector<vector<complex<double>>> complexVector1, vector<vector<complex<double>>> complexVector2){
+bool ComplexVectorCalculations::equalSize(vvcd complexVector1, vvcd complexVector2){
     int numOfColumns = (int)complexVector1[0].size();
     
     if (complexVector1.size() == complexVector2.size()){
@@ -148,7 +150,7 @@ bool ComplexVectorCalculations::equalSize(vector<vector<complex<double>>> comple
     }
 }
 
-void ComplexVectorCalculations::viewComplexVector(vector<vector<complex<double>>> complexVector){
+void ComplexVectorCalculations::viewComplexVector(vvcd complexVector){
     for (int row = 0; row < complexVector.size(); row++){
         for (int column = 0; column < complexVector[row].size(); column++){
             cout << setw(6) << complexVector[row][column];

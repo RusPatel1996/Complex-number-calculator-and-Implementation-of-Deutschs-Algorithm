@@ -14,29 +14,29 @@ class QuantumGates
 {
 public:
     ComplexVectorCalculations calc;
-    vector<vector<complex<double>>> cnotGate(int, int);
-    vector<vector<complex<double>>> toffoliGate(int, int, int);
-    vector<vector<complex<double>>> fredkinGate(int, int, int);
-    vector<vector<complex<double>>> deutschsAlgorithm(int, int);
-    vector<vector<complex<double>>> initializeQubit(vector<vector<complex<double>>>, int);
+    vvcd cnotGate(int, int);
+    vvcd toffoliGate(int, int, int);
+    vvcd fredkinGate(int, int, int);
+    vvcd deutschsAlgorithm(int, int);
+    vvcd initializeQubit(vvcd, int);
 protected:
 private:
-    vector<vector<complex<double>>> qubit1, qubit2, qubit3;
-    vector<vector<complex<double>>> HadamardMatrix = {
+    vvcd qubit1, qubit2, qubit3;
+    vvcd HadamardMatrix = {
         {{(1/sqrt(2)),0},{(1/sqrt(2)),0}},
         {{(1/sqrt(2)),0},{(-1/sqrt(2)),0}}
     };
-    vector<vector<complex<double>>> identityMatrix = {
+    vvcd identityMatrix = {
         {{1,0},{0,0}},
         {{0,0},{1,0}}
     };
-    vector<vector<complex<double>>> cnotMatrix = {
+    vvcd cnotMatrix = {
         {{1,0},{0,0},{0,0},{0,0}},
         {{0,0},{1,0},{0,0},{0,0}},
         {{0,0},{0,0},{0,0},{1,0}},
         {{0,0},{0,0},{1,0},{0,0}}
     };
-    vector<vector<complex<double>>> toffoliMatrix = {
+    vvcd toffoliMatrix = {
         {{1,0},{0,0},{0,0},{0,0},{0,0},{0,0},{0,0},{0,0}},
         {{0,0},{1,0},{0,0},{0,0},{0,0},{0,0},{0,0},{0,0}},
         {{0,0},{0,0},{1,0},{0,0},{0,0},{0,0},{0,0},{0,0}},
@@ -46,7 +46,7 @@ private:
         {{0,0},{0,0},{0,0},{0,0},{0,0},{0,0},{0,0},{1,0}},
         {{0,0},{0,0},{0,0},{0,0},{0,0},{0,0},{1,0},{0,0}}
     };
-    vector<vector<complex<double>>> fredkinMatrix = {
+    vvcd fredkinMatrix = {
         {{1,0},{0,0},{0,0},{0,0},{0,0},{0,0},{0,0},{0,0}},
         {{0,0},{1,0},{0,0},{0,0},{0,0},{0,0},{0,0},{0,0}},
         {{0,0},{0,0},{1,0},{0,0},{0,0},{0,0},{0,0},{0,0}},

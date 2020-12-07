@@ -6,7 +6,7 @@
 
 #include "quantum_gates.h"
 
-vector<vector<complex<double>>> QuantumGates::initializeQubit(vector<vector<complex<double>>> qubit, int bit){
+vvcd QuantumGates::initializeQubit(vvcd qubit, int bit){
     if (bit == 0){
         qubit.push_back({{1,0}});
         qubit.push_back({{0,0}});
@@ -19,14 +19,14 @@ vector<vector<complex<double>>> QuantumGates::initializeQubit(vector<vector<comp
     return qubit;
 }
 
-vector<vector<complex<double>>> QuantumGates::cnotGate(int bit1, int bit2){
+vvcd QuantumGates::cnotGate(int bit1, int bit2){
     qubit1 = initializeQubit(qubit1, bit1);
     qubit2 = initializeQubit(qubit2, bit2);
     
     return calc.multiplication(cnotMatrix, calc.tensor(qubit1, qubit2));
 }
 
-vector<vector<complex<double>>> QuantumGates::toffoliGate(int bit1, int bit2, int bit3){
+vvcd QuantumGates::toffoliGate(int bit1, int bit2, int bit3){
     qubit1 = initializeQubit(qubit1, bit1);
     qubit2 = initializeQubit(qubit2, bit2);
     qubit3 = initializeQubit(qubit3, bit3);
@@ -34,7 +34,7 @@ vector<vector<complex<double>>> QuantumGates::toffoliGate(int bit1, int bit2, in
     return calc.multiplication(toffoliMatrix, calc.tensor(calc.tensor(qubit1, qubit2), qubit3));
 }
 
-vector<vector<complex<double>>> QuantumGates::fredkinGate(int bit1, int bit2, int bit3){
+vvcd QuantumGates::fredkinGate(int bit1, int bit2, int bit3){
     qubit1 = initializeQubit(qubit1, bit1);
     qubit2 = initializeQubit(qubit2, bit2);
     qubit3 = initializeQubit(qubit3, bit3);
@@ -42,11 +42,11 @@ vector<vector<complex<double>>> QuantumGates::fredkinGate(int bit1, int bit2, in
     return calc.multiplication(fredkinMatrix, calc.tensor(calc.tensor(qubit1, qubit2), qubit3));
 }
 
-vector<vector<complex<double>>> QuantumGates::deutschsAlgorithm(int uf0, int uf1){
+vvcd QuantumGates::deutschsAlgorithm(int uf0, int uf1){
     qubit1 = initializeQubit(qubit1, 0);
     qubit2 = initializeQubit(qubit2, 1);
     
-    vector<vector<complex<double>>> ufMatrix;
+    vvcd ufMatrix;
     
     if (uf0 == 0 && uf1 == 1){
         ufMatrix = {

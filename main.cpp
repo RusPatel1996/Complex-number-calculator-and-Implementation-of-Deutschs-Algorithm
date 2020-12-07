@@ -13,8 +13,8 @@ using namespace std;
 void complexNumberCalculations();
 void complexVectorCalculations();
 void quantumGates();
-complex<double> createComplexNumber(double real, double imag);
-vector<vector<complex<double>>> createComplexVector(int rows, int cols);
+cd createComplexNumber(double real, double imag);
+vvcd createComplexVector(int rows, int cols);
 
 int main(){
     int choice = 0;
@@ -61,8 +61,8 @@ void complexNumberCalculations(){
     cout << "Input imaginary value for the first complex number: ";
     cin >> imag;
     
-    complex<double> complex1 = createComplexNumber(real, imag);
-    complex<double> complex2;
+    cd complex1 = createComplexNumber(real, imag);
+    cd complex2;
     
     if (choice <= 4){
         cout << "Input real value for the second complex number: ";
@@ -103,7 +103,7 @@ void complexVectorCalculations(){
     int choice = 0;
     int rows = 0;
     int cols = 0;
-    complex<double> complexScalar;
+    cd complexScalar;
     
     cout << "You have chosen Complex Vector Calculations, what would you like to do next?" << endl;
     cout << "  1. Addition" << endl;
@@ -118,8 +118,8 @@ void complexVectorCalculations(){
     cout << "Please enter the rows and columns for the vector: ";
     cin >> rows;
     cin >> cols;
-    vector<vector<complex<double>>> complexVector1 = createComplexVector(rows, cols);
-    vector<vector<complex<double>>> complexVector2;
+    vvcd complexVector1 = createComplexVector(rows, cols);
+    vvcd complexVector2;
     
     vecCalc.viewComplexVector(complexVector1);
     if (choice < 4){
@@ -210,9 +210,9 @@ void quantumGates(){
     return;
 }
 
-vector<vector<complex<double>>> createComplexVector(int rows, int cols){
-    vector<complex<double>> rowInput;
-    vector<vector<complex<double>>> cmplxVec;
+vvcd createComplexVector(int rows, int cols){
+    vector<cd> rowInput;
+    vvcd cmplxVec;
     double real = 0;
     double imag = 0;
     
@@ -230,7 +230,7 @@ vector<vector<complex<double>>> createComplexVector(int rows, int cols){
     return cmplxVec;
 }
 
-complex<double> createComplexNumber(double real, double imag){
-    complex<double> complexNum(real, imag);
+cd createComplexNumber(double real, double imag){
+    cd complexNum(real, imag);
     return complexNum;
 }

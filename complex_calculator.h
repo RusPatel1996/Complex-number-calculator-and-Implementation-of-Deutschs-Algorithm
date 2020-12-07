@@ -11,15 +11,17 @@
 #include <complex>
 using namespace std;
 
+typedef complex<double> cd;
+
 class ComplexCalculations
 {
 public:
-    complex<double> addition(complex<double>, complex<double>);
-    complex<double> subtraction(complex<double>, complex<double>);
-    complex<double> multiplication(complex<double>, complex<double>);
-    complex<double> division(complex<double>, complex<double>);
-    complex<double> modulus(complex<double>);
-    complex<double> conjugate(complex<double>);
+    cd addition(cd, cd);
+    cd subtraction(cd, cd);
+    cd multiplication(cd, cd);
+    cd division(cd, cd);
+    cd modulus(cd);
+    cd conjugate(cd);
 protected:
 private:
 };

@@ -13,19 +13,21 @@
 #include <iomanip>
 #include "complex_calculator.h"
 
+typedef vector<vector<complex<double>>> vvcd;
+
 class ComplexVectorCalculations
 {
 public:
-    vector<vector<complex<double>>> addition(vector<vector<complex<double>>>, vector<vector<complex<double>>>);
-    vector<vector<complex<double>>> subtraction(vector<vector<complex<double>>>, vector<vector<complex<double>>>);
-    vector<vector<complex<double>>> multiplication(vector<vector<complex<double>>>, vector<vector<complex<double>>>);
-    vector<vector<complex<double>>> scalarMultiplication(complex<double>, vector<vector<complex<double>>>);
-    vector<vector<complex<double>>> tensor(vector<vector<complex<double>>>, vector<vector<complex<double>>>);
-    vector<vector<complex<double>>> conjugate(vector<vector<complex<double>>>);
-    vector<vector<complex<double>>> transpose(vector<vector<complex<double>>>);
-    vector<vector<complex<double>>> adjoint(vector<vector<complex<double>>>);
-    bool equalSize(vector<vector<complex<double>>>, vector<vector<complex<double>>>);
-    void viewComplexVector(vector<vector<complex<double>>>);
+    vvcd addition(vvcd, vvcd);
+    vvcd subtraction(vvcd, vvcd);
+    vvcd multiplication(vvcd, vvcd);
+    vvcd scalarMultiplication(cd, vvcd);
+    vvcd tensor(vvcd, vvcd);
+    vvcd conjugate(vvcd);
+    vvcd transpose(vvcd);
+    vvcd adjoint(vvcd);
+    bool equalSize(vvcd, vvcd);
+    void viewComplexVector(vvcd);
 protected:
 private:
 };

@@ -6,26 +6,26 @@
 
 #include "complex_calculator.h"
 
-complex<double> ComplexCalculations::addition(complex<double> complexNum1, complex<double> complexNum2){
+cd ComplexCalculations::addition(cd complexNum1, cd complexNum2){
     return complexNum1 + complexNum2;
 }
 
-complex<double> ComplexCalculations::subtraction(complex<double> complexNum1, complex<double> complexNum2){
+cd ComplexCalculations::subtraction(cd complexNum1, cd complexNum2){
     return complexNum1 - complexNum2;
 }
 
-complex<double> ComplexCalculations::multiplication(complex<double> complexNum1, complex<double> complexNum2){
+cd ComplexCalculations::multiplication(cd complexNum1, cd complexNum2){
     return complexNum1 * complexNum2;
 }
 
-complex<double> ComplexCalculations::division(complex<double> complexNum1, complex<double> complexNum2){
+cd ComplexCalculations::division(cd complexNum1, cd complexNum2){
     return complexNum1 / complexNum2;
 }
 
-complex<double> ComplexCalculations::modulus(complex<double> complexNum){
+cd ComplexCalculations::modulus(cd complexNum){
     return abs(complexNum);
 }
 
-complex<double> ComplexCalculations::conjugate(complex<double> complexNum){
+cd ComplexCalculations::conjugate(cd complexNum){
     return conj(complexNum);
 }
